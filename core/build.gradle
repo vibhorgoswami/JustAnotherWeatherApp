@@ -7,16 +7,19 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 
     buildTypes {
@@ -41,8 +44,6 @@ dependencies {
     implementation "com.fasterxml.jackson.core:jackson-core:{$jacksonCoreLibVersion"
     implementation "com.fasterxml.jackson.core:jackson-annotations:{$jacksonCoreLibVersion}"
     implementation "com.fasterxml.jackson.core:jackson-databind:{$jacksonCoreLibVersion}"
-    // DB
-    implementation "android.arch.persistence.room:runtime:$roomLibDependency"
     // MultiDex and Leak Canary
     implementation "com.android.support:multidex:$multidexLibVersion"
     implementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"

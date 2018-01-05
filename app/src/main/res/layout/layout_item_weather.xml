@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="2dp"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tvWeatherCurrentTemp"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_toStartOf="@+id/ivWeatherForecastImage"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_weather_current_temp" />
+
+        <LinearLayout
+            android:id="@+id/llWeatherMinMaxContainer"
+            android:layout_below="@+id/tvWeatherCurrentTemp"
+            android:layout_toStartOf="@+id/ivWeatherForecastImage"
+            android:layout_alignBottom="@+id/ivWeatherForecastImage"
+            android:layout_alignParentStart="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvWeatherMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_weather_max_temp"
+                style="@style/Base.TextAppearance.AppCompat.Subhead" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="@color/colorAccent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp" />
+
+            <TextView
+                android:id="@+id/tvWeatherMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_weather_min_temp"
+                style="@style/Base.TextAppearance.AppCompat.Subhead" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvWeatherDescription"
+            android:layout_below="@+id/ivWeatherForecastImage"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:text="@string/text_weather_description"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:id="@+id/ivWeatherForecastImage"
+            android:importantForAccessibility="no"
+            android:layout_marginStart="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

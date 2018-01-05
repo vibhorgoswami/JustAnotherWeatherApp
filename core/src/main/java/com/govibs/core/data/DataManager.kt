@@ -1,9 +1,10 @@
 package com.govibs.core.data
 
 import com.govibs.core.data.model.WeatherBaseModel
-import com.govibs.core.data.network.RemoteCallback
 import com.govibs.core.data.network.weather.WeatherService
 import com.govibs.core.data.network.weather.WeatherServiceFactory
+import io.reactivex.Single
+import io.reactivex.schedulers.Schedulers
 
 class DataManager private constructor() {
 
@@ -22,9 +23,10 @@ class DataManager private constructor() {
         }
     }
 
-    fun getWeatherInfo(postalCode: String, unit: String, days: Int, listener: RemoteCallback<WeatherBaseModel>) {
-        mWeatherService.getDailyWeatherForLocationByPostalCode("19333", 7, unit, RESPONSE_MODE, APP_ID)
-                .enqueue(listener)
+    fun getWeatherInfo(query: String, unit: String, days: Int): Single<WeatherBaseModel> {
+        return mWeatherService.getDailyWeatherForLocationByPostalCode(query, days, unit, RESPONSE_MODE, APP_ID)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.computation())
     }
 
 }

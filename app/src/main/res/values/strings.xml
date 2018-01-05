@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">JustAnotherWeatherApp</string>
+    <string name="app_name_display">Welcome to J.A.W.A</string>
+
+    <string name="text_weather_current_temp">Current</string>
+    <string name="text_weather_min_temp">Min</string>
+    <string name="text_weather_max_temp">Max</string>
+    <string name="text_weather_wind">Wind</string>
+    <string name="text_weather_night">Night</string>
+    <string name="text_weather_evening">Evening</string>
+    <string name="text_weather_morning">Morning</string>
+    <string name="text_weather_description">Description</string>
+
 </resources>

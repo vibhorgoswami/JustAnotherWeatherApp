@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SplashScreenActivity">
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/flSplashCenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:paddingTop="40dp"
+        android:layout_centerInParent="true">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginBottom="35dp"
+            android:layout_marginEnd="35dp"
+            android:translationY="8dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_splash_umbrella_accent_24dp"
+            android:importantForAccessibility="no" />
+
+        <ImageView
+            android:id="@+id/ivSplashCenterDroid"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_splash_center_droid_accent_24dp"
+            android:importantForAccessibility="no" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvSplash"
+        android:layout_below="@+id/flSplashCenter"
+        android:layout_centerHorizontal="true"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name_display" />
+
+</RelativeLayout>

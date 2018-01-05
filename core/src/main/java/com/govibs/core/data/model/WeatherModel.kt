@@ -12,7 +12,7 @@ class WeatherModel : Serializable {
     @JsonProperty("temp")
     var weatherTemp: WeatherTempModel? = null
     @JsonProperty("weather")
-    var weatherDescription: WeatherDescriptionModel? = null
+    var weatherDescriptionList: List<WeatherDescriptionModel>? = null
 
     var humidity: Int? = 0
 
