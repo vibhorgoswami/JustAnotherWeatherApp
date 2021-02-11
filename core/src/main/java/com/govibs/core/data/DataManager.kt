@@ -10,7 +10,7 @@ class DataManager private constructor() {
 
     private val mWeatherService: WeatherService = WeatherServiceFactory.makeWeatherService()
     private val RESPONSE_MODE: String = "json"
-    private val APP_ID = "4ae629ed0d7425a9b73110c9b9cd77d7"
+    private val APP_ID = "{INSERT_API_KEY}"
 
     companion object {
         private var sInstance: DataManager? = null
